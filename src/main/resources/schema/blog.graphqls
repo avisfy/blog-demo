@@ -1,0 +1,26 @@
+type Query {
+    posts(titleFilter: String): [Post]
+    post(idFilter: Int!): Post
+}
+
+type Post {
+    id: Int!
+    title: String
+    text: String
+    likes: Int
+#    author: User!
+#    comments: [Comment]
+}
+
+#type Comment {
+#    id: Int!
+#    text: String!
+#    user: User!
+#    post: Post!
+#}
+#
+#type User {
+#    id: Int!
+#    name: String!
+#    email: String
+#}
