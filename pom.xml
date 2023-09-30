@@ -27,6 +27,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- fix bug Could not initialize class com.netflix.graphql.dgs.DgsExecutionResult$Builder -->
             <dependency>
                 <groupId>com.graphql-java</groupId>
                 <artifactId>graphql-java</artifactId>

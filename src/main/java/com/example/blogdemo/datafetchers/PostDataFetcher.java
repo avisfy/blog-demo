@@ -7,6 +7,7 @@ import com.netflix.graphql.dgs.DgsQuery;
 import com.netflix.graphql.dgs.InputArgument;
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @DgsComponent
 @AllArgsConstructor
@@ -21,4 +22,8 @@ public class PostDataFetcher {
         return postService.getPostsByTitle(titleFilter);
     }
 
+    @DgsQuery
+    public Mono<Post> post(@InputArgument Integer idFilter) {
+        return postService.getPostById(idFilter);
+    }
 }

@@ -8,19 +8,19 @@ type Post {
     title: String
     text: String
     likes: Int
-#    author: User!
-#    comments: [Comment]
+    author: User!
+    comments: [Comment]
 }
 
-#type Comment {
-#    id: Int!
-#    text: String!
-#    user: User!
-#    post: Post!
-#}
-#
-#type User {
-#    id: Int!
-#    name: String!
-#    email: String
-#}
+type Comment {
+    id: Int!
+    text: String!
+    user: User!
+    post: Post!
+}
+
+type User {
+    id: Int!
+    name: String!
+    email: String
+}
