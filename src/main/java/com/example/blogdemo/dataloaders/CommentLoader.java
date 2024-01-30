@@ -14,7 +14,7 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
-@DgsDataLoader(name= "comments")
+@DgsDataLoader
 @AllArgsConstructor
 public class CommentLoader implements MappedBatchLoader<Integer, List<Comment>> {
     private final CommentService commentService;

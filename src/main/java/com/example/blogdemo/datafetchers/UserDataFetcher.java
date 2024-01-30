@@ -7,6 +7,7 @@ import com.example.blogdemo.types.User;
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsData;
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment;
+import graphql.schema.DataFetchingEnvironment;
 import org.dataloader.DataLoader;
 
 import java.util.concurrent.CompletableFuture;
@@ -22,11 +23,10 @@ public class UserDataFetcher {
     }
 
     @DgsData(parentType = "Comment", field = "user")
-    public CompletableFuture<User> commentUser(DgsDataFetchingEnvironment dfe) {
-        DataLoader<Integer, User> dataLoader = dfe.getDataLoader(UserLoader.class);
+    public CompletableFuture<User> commentUser(DataFetchingEnvironment dfe) {
+        DataLoader<Integer, User> dataLoader = dfe.getDataLoader("users");
         Comment comment = dfe.getSource();
         Integer id = comment.getUserId();
         return dataLoader.load(id);
     }
-
 }
